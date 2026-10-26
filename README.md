@@ -45,7 +45,7 @@ An end-to-end Machine Learning assignment project developed for the **Horizon In
 | :---: | :---: |
 | ![Multi-Digit Upload](screenshots/05_image_upload_test.png) | ![Evaluation Matrix](screenshots/02_evaluation_matrix.png) |
 
-> 📹 **Video Walkthrough Demonstration**: View the recorded walkthrough at [demo_recording.webp](demo_recording.webp).
+> 📹 **Video Walkthrough Demonstration**: View the recorded walkthrough at [demo_recording.mp4](demo_recording.mp4) (H.264 MP4, 69s) or [demo_recording.webp](demo_recording.webp).
 
 ---
 
