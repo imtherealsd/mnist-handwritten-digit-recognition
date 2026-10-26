@@ -1,0 +1,17 @@
+# Core Machine Learning & Data Processing
+numpy>=1.23.0,<3.0.0
+pillow>=9.5.0
+matplotlib>=3.7.0
+scikit-learn>=1.2.0
+
+# Deep Learning Framework
+# Note: In Google Colab, TensorFlow is pre-installed.
+# For local inference, install tensorflow or tensorflow-cpu.
+tensorflow>=2.15.0
+
+# Interactive Web Application
+streamlit>=1.30.0
+streamlit-drawable-canvas>=0.9.0,<0.10.0
+
+# Testing & Quality Assurance
+pytest>=7.0.0
