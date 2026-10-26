@@ -1,7 +1,7 @@
 # 1–2 Minute Video Demo Script
 
 **Project**: Handwritten Digit Recognition using CNN (MNIST)  
-**Internship**: Machine Learning Internship — Project 1 of 2  
+**Internship**: Machine Learning Internship  
 **Organization**: Horizon Intern  
 **Target Duration**: 90 to 120 seconds  
 
@@ -10,7 +10,7 @@
 ### [0:00 – 0:15] Introduction
 - **Visual**: Screen recording showing the Streamlit application at `http://localhost:8501` or GitHub repository overview.
 - **Spoken Audio**:
-  > *"Hello everyone! My name is [Your Name], and this is Project 1 of my Machine Learning Internship with Horizon Intern: **Handwritten Digit Recognition using a Convolutional Neural Network on the MNIST dataset**."*
+  > *"Hello everyone! My name is [Your Name], and this is my Machine Learning Internship project with Horizon Intern: **Handwritten Digit Recognition using a Convolutional Neural Network on the MNIST dataset**."*
 
 ---
 
@@ -45,7 +45,7 @@
 - **Visual**: Show terminal running `pytest tests/` (all 14 tests passing).
 - **Spoken Audio**:
   > *"The codebase is structured into reusable modules under `src/` and fully covered by 14 unit tests using pytest for preprocessing, segmentation, and inference.  
-  > Thank you Horizon Intern for this assignment opportunity. This completes my demonstration of Project 1!"*
+  > Thank you Horizon Intern for this assignment opportunity. This completes my demonstration!"*
 
 ---
 

@@ -8,7 +8,7 @@ notebook = {
    "metadata": {},
    "source": [
     "# Handwritten Digit Recognition using CNN (MNIST)\n",
-    "### Machine Learning Internship — Project 1 of 2\n",
+    "### Machine Learning Internship Assignment\n",
     "**Assigned by:** Horizon Intern  \n",
     "**Objective:** Build, train, evaluate, and export a Convolutional Neural Network (CNN) that classifies handwritten digits from 0 to 9 using the classic MNIST dataset.\n",
     "\n",

@@ -134,7 +134,7 @@ ax2.set_xlabel("Epoch", color='#94A3B8', fontsize=11)
 ax2.set_ylabel("Loss", color='#94A3B8', fontsize=11)
 ax2.legend(facecolor='#0F172A', edgecolor='#475569', labelcolor='#F8FAFC')
 
-plt.suptitle("Horizon Intern ML-I: Convolutional Neural Network Training History", color='#F8FAFC', fontsize=15, weight='bold', y=1.02)
+plt.suptitle("Horizon Intern: Convolutional Neural Network Training History", color='#F8FAFC', fontsize=15, weight='bold', y=1.02)
 plt.tight_layout()
 fig.savefig("screenshots/01_colab_training.png", dpi=200, bbox_inches='tight', facecolor=fig.get_facecolor())
 plt.close(fig)

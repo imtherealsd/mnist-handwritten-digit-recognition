@@ -1,7 +1,7 @@
 # Horizon Intern Submission Checklist
 
 **Project**: Handwritten Digit Recognition using CNN (MNIST)  
-**Internship**: Machine Learning Internship — Project 1 of 2  
+**Internship**: Machine Learning Internship  
 **Organization**: Horizon Intern  
 
 Use this checklist to ensure all submission guidelines and technical requirements are completely satisfied before submitting your portfolio link to Horizon Intern.

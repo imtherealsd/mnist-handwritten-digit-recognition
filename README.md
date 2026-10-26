@@ -5,7 +5,7 @@
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.30%2B-red.svg)](https://streamlit.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-An end-to-end Machine Learning assignment project developed for the **Horizon Intern Machine Learning Internship** (Project 1 of 2). This repository implements a custom Convolutional Neural Network (CNN) trained on the classic MNIST dataset and serves predictions through an interactive, responsive Streamlit web application.
+An end-to-end Machine Learning assignment project developed for the **Horizon Intern Machine Learning Internship**. This repository implements a custom Convolutional Neural Network (CNN) trained on the classic MNIST dataset and serves predictions through an interactive, responsive Streamlit web application.
 
 ---
 

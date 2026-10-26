@@ -112,7 +112,7 @@ def render_sidebar():
         st.markdown("### 📌 Project Information")
         st.markdown(
             "**Handwritten Digit Recognition (MNIST)**  \n"
-            "*Horizon Intern — Machine Learning Internship Assignment (Project 1 of 2)*"
+            "*Horizon Intern — Machine Learning Internship Assignment*"
         )
         st.markdown("---")
 
