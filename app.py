@@ -252,23 +252,92 @@ def main():
             "Upload an image containing **any numbers** — supports handwritten, typed, printed, "
             "receipts, documents, screenshots, and multi-digit collages."
         )
+
+        # ⚡ Quick-Test Presets for instant testing without needing local files
+        st.markdown("##### ⚡ Quick-Test Presets (Click any to test immediately):")
+        qcol1, qcol2, qcol3, qcol4, qcol5 = st.columns(5)
+        
+        sample_to_load = None
+        sample_label = ""
+        
+        with qcol1:
+            if st.button("🔢 Sample '42'", use_container_width=True):
+                sample_to_load = "sample_images/multidigit_42.png"
+                sample_label = "Sample 42 (Handwritten)"
+        with qcol2:
+            if st.button("🔢 Sample '73'", use_container_width=True):
+                sample_to_load = "sample_images/multidigit_73.png"
+                sample_label = "Sample 73 (Handwritten)"
+        with qcol3:
+            if st.button("🔢 Sample '508'", use_container_width=True):
+                sample_to_load = "sample_images/multidigit_508.png"
+                sample_label = "Sample 508 (3-Digit)"
+        with qcol4:
+            if st.button("🔢 Sample '91'", use_container_width=True):
+                sample_to_load = "sample_images/multidigit_91_dark.png"
+                sample_label = "Sample 91 (Dark Theme)"
+        with qcol5:
+            if st.button("🔢 Printed '7'", use_container_width=True):
+                sample_to_load = "sample_images/test_dark_printed.png"
+                sample_label = "Sample 7 (Printed)"
+
+        if "selected_sample" not in st.session_state:
+            st.session_state.selected_sample = None
+            st.session_state.selected_label = ""
+
+        if sample_to_load:
+            st.session_state.selected_sample = sample_to_load
+            st.session_state.selected_label = sample_label
+
+        st.markdown("---")
+        st.markdown("##### 📁 Or Upload Any Image File from Your Device:")
+
         uploaded_file = st.file_uploader(
-            "Choose an image file",
-            type=["png", "jpg", "jpeg"],
+            "Drag & drop or click Browse below",
+            type=["png", "jpg", "jpeg", "PNG", "JPG", "JPEG", "webp", "WEBP", "bmp", "BMP", "tiff", "jfif"],
             help="Images with dark ink on light paper, light on dark, or colored digits are automatically handled.",
+            key="digit_image_uploader",
         )
+
+        with st.expander("📷 Or take a photo using your camera / webcam"):
+            camera_file = st.camera_input("Take a photo of a handwritten number", key="camera_input")
+
+        # Resolve image from upload, camera, or quick preset
+        image_source = None
         if uploaded_file is not None:
+            image_source = uploaded_file
+            source_name = f"Uploaded File ({uploaded_file.name})"
+            st.session_state.selected_sample = None
+        elif camera_file is not None:
+            image_source = camera_file
+            source_name = "Camera Snapshot"
+            st.session_state.selected_sample = None
+        elif st.session_state.selected_sample and os.path.exists(st.session_state.selected_sample):
+            image_source = st.session_state.selected_sample
+            source_name = st.session_state.selected_label
+
+        if image_source is not None:
             try:
-                pil_upload = Image.open(uploaded_file)
+                if isinstance(image_source, str):
+                    pil_upload = Image.open(image_source)
+                else:
+                    pil_upload = Image.open(image_source)
+
+                if pil_upload.mode in ("P", "CMYK", "1"):
+                    pil_upload = pil_upload.convert("RGB")
+
+                # Auto-downscale excessively large phone camera shots to keep inference instant
+                if max(pil_upload.size) > 1200:
+                    pil_upload.thumbnail((1200, 1200), Image.Resampling.LANCZOS)
+
                 active_image = pil_upload
-                source_name = f"Uploaded File ({uploaded_file.name})"
 
                 col_u1, col_u2 = st.columns([1, 2])
                 with col_u1:
-                    st.image(pil_upload, caption=f"Uploaded: {uploaded_file.name}", width=230)
+                    st.image(pil_upload, caption=f"Source: {source_name}", width=230)
                 with col_u2:
                     st.success(
-                        f"✅ **{uploaded_file.name}** loaded successfully!  \n"
+                        f"✅ **{source_name}** loaded successfully!  \n"
                         f"Dimensions: {pil_upload.width} × {pil_upload.height} px | Mode: {pil_upload.mode}"
                     )
             except Exception as ex:
