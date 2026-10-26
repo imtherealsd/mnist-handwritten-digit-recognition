@@ -50,12 +50,12 @@ st.markdown(
     .main-title {
         font-size: 2.3rem;
         font-weight: 700;
-        color: #1E293B;
+        color: #FFFFFF !important;
         margin-bottom: 0.2rem;
     }
     .subtitle {
         font-size: 1.05rem;
-        color: #64748B;
+        color: #CBD5E1 !important;
         margin-bottom: 1.5rem;
     }
     .metric-card {
@@ -110,10 +110,7 @@ def render_sidebar():
     """Render the explanatory sidebar with model specifications and guidelines."""
     with st.sidebar:
         st.markdown("### 📌 Project Information")
-        st.markdown(
-            "**Handwritten Digit Recognition (MNIST)**  \n"
-            "*Horizon Intern — Machine Learning Internship Assignment*"
-        )
+        st.markdown("**Handwritten Digit Recognition (MNIST)**")
         st.markdown("---")
 
         st.markdown("### 🔢 Supported Inputs")
